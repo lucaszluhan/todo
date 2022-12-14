@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { View } from 'react-native'
 import { Form, List } from '../../components'
 import { Note } from '../../types/Note'
@@ -15,13 +15,20 @@ export const Home = () => {
     setList(list.filter(item => item.id !== id))
   }
 
+  function handleCheck(id: number) {
+    const update = list
+    const item = update.findIndex(item => item.id == id)
+    update[item].completed = !update[item].completed
+    setList(update)
+  }
+
   return (
     <View style={style.home}>
       <View style={style.form}>
         <Form addItem={handleAddNote} />
       </View>
       <View style={style.list}>
-        <List data={list} removeFc={handleDeleteNote} />
+        <List data={list} removeFc={handleDeleteNote} checkFc={handleCheck} />
       </View>
     </View>
   )

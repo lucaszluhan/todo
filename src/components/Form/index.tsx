@@ -9,7 +9,7 @@ export const Form = ({ addItem }: FormProps) => {
   const [isFocused, setIsFocused] = useState<boolean>(false)
 
   function handleNewItem() {
-    addItem({ id: id, note: note })
+    addItem({ id: id, note: note, completed: false })
     setId(id + 1)
     setNote('')
   }

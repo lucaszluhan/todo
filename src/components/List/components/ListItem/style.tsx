@@ -16,6 +16,12 @@ export const style = StyleSheet.create({
     color: '#F2F2F2',
     fontSize: 14,
     flex: 1,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
     marginHorizontal: 20,
+    height: 35,
+  },
+  textCompleted: {
+    textDecorationLine: 'line-through',
   },
 })
