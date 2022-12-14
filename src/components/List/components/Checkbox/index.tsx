@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Pressable } from 'react-native'
+import { Image, Pressable } from 'react-native'
 import { style } from './style'
 
 export const Checkbox = () => {
@@ -9,5 +9,9 @@ export const Checkbox = () => {
     setIsChecked(!isChecked)
   }
 
-  return <Pressable onPress={handleCheck} style={style.checkbox}></Pressable>
+  return (
+    <Pressable onPress={handleCheck} style={[style.checkbox, isChecked && style.checked]}>
+      {isChecked && <Image source={require('../../../../images/Vector.png')} />}
+    </Pressable>
+  )
 }

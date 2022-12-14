@@ -18,7 +18,7 @@ export const style = StyleSheet.create({
     marginRight: 10,
     padding: 16,
     flexGrow: 1,
-    maxWidth: '80%',
+    maxWidth: 290,
   },
   inputFocused: {
     borderWidth: 1,

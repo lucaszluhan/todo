@@ -11,13 +11,17 @@ export const Home = () => {
     setList([...list, note])
   }
 
+  function handleDeleteNote(id: number) {
+    setList(list.filter(item => item.id !== id))
+  }
+
   return (
     <View style={style.home}>
       <View style={style.form}>
         <Form addItem={handleAddNote} />
       </View>
       <View style={style.list}>
-        <List data={list} />
+        <List data={list} removeFc={handleDeleteNote} />
       </View>
     </View>
   )

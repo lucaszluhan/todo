@@ -4,7 +4,7 @@ import { ListEmpty } from './components/ListEmpty'
 import { ListItem } from './components/ListItem'
 import { style } from './style'
 
-export const List = ({ data }: ListProps) => {
+export const List = ({ data, removeFc }: ListProps) => {
   return (
     <View style={style.container}>
       <View style={style.header}>
@@ -23,7 +23,7 @@ export const List = ({ data }: ListProps) => {
       </View>
       <FlatList
         data={data}
-        renderItem={item => <ListItem item={item.item} />}
+        renderItem={item => <ListItem item={item.item} removeFc={removeFc} />}
         ListEmptyComponent={<ListEmpty />}
       />
     </View>

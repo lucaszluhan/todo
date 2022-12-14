@@ -9,12 +9,13 @@ export const style = StyleSheet.create({
     borderWidth: 1,
     flexDirection: 'row',
     height: 56,
-    padding: 12,
     marginBottom: 8,
+    padding: 20,
   },
   text: {
     color: '#F2F2F2',
     fontSize: 14,
+    flex: 1,
     marginHorizontal: 20,
   },
 })
