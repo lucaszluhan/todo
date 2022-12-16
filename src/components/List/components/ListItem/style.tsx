@@ -12,16 +12,25 @@ export const style = StyleSheet.create({
     marginBottom: 8,
     padding: 20,
   },
+  containerCompleted: {
+    borderColor: '#262626',
+  },
   text: {
     color: '#F2F2F2',
     fontSize: 14,
     flex: 1,
-    flexWrap: 'wrap',
     flexDirection: 'row',
     marginHorizontal: 20,
-    height: 35,
+    height: 34,
+    alignContent: 'center',
+    textAlignVertical: 'center',
   },
   textCompleted: {
+    color: '#808080',
     textDecorationLine: 'line-through',
+  },
+  trashPress: {
+    backgroundColor: '#333333',
+    borderRadius: 4,
   },
 })

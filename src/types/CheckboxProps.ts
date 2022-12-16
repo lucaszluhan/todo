@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react'
 import { Note } from './Note'
 
 export interface CheckboxProps {
-  id: number
+  item: Note
   checkFc: (id: number) => void
   completeFc: Dispatch<SetStateAction<boolean>>
   completeState: boolean

@@ -10,8 +10,15 @@ export const style = StyleSheet.create({
     justifyContent: 'center',
     width: 20,
   },
+  checkboxActive: {
+    borderColor: '#1E6F9F',
+  },
   checked: {
     backgroundColor: '#5E60CE',
     borderColor: '#5E60CE',
+  },
+  checkedActive: {
+    backgroundColor: '#8284FA',
+    borderColor: '#8284FA',
   },
 })

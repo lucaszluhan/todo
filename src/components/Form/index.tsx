@@ -1,17 +1,31 @@
 import { useState } from 'react'
-import { Image, TextInput, TouchableOpacity, View } from 'react-native'
+import { Alert, Button, Image, Pressable, TextInput, TouchableOpacity, View } from 'react-native'
 import { FormProps } from '../../types/FormProps'
 import { style } from './style'
 
 export const Form = ({ addItem }: FormProps) => {
   const [note, setNote] = useState<string>('')
-  const [id, setId] = useState<number>(1)
+  const [id, setId] = useState<number>(5)
   const [isFocused, setIsFocused] = useState<boolean>(false)
+  const [isButtonActive, setIsButtonActive] = useState<boolean>(false)
 
   function handleNewItem() {
+    if (!note) {
+      Alert.alert('Preencha o campo de tarefa!')
+      return
+    }
+
     addItem({ id: id, note: note, completed: false })
     setId(id + 1)
     setNote('')
+  }
+
+  function handlePressIn() {
+    setIsButtonActive(true)
+  }
+
+  function handlePressOut() {
+    setIsButtonActive(false)
   }
 
   return (
@@ -25,9 +39,14 @@ export const Form = ({ addItem }: FormProps) => {
         onBlur={() => setIsFocused(false)}
         onFocus={() => setIsFocused(true)}
       />
-      <TouchableOpacity style={style.button} onPress={() => handleNewItem()}>
+      <Pressable
+        style={[style.button, isButtonActive && style.buttonPress]}
+        onPress={() => handleNewItem()}
+        onPressIn={handlePressIn}
+        onPressOut={handlePressOut}
+      >
         <Image source={require('../../images/plus.png')} />
-      </TouchableOpacity>
+      </Pressable>
     </View>
   )
 }

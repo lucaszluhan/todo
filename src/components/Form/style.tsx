@@ -32,4 +32,7 @@ export const style = StyleSheet.create({
     justifyContent: 'center',
     width: 52,
   },
+  buttonPress: {
+    backgroundColor: '#4EA8DE',
+  },
 })

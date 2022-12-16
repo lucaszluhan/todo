@@ -14,7 +14,7 @@ export const List = ({ data, removeFc, checkFc }: ListProps) => {
 
   useEffect(() => {
     getCompletedNumb()
-  }, [])
+  }, [data])
 
   return (
     <View style={style.container}>

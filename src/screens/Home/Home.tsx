@@ -5,7 +5,28 @@ import { Note } from '../../types/Note'
 import { style } from './style'
 
 export const Home = () => {
-  const [list, setList] = useState<Note[]>([])
+  const [list, setList] = useState<Note[]>([
+    {
+      id: 1,
+      note: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+      completed: true,
+    },
+    {
+      id: 2,
+      note: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+      completed: false,
+    },
+    {
+      id: 3,
+      note: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+      completed: true,
+    },
+    {
+      id: 4,
+      note: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+      completed: false,
+    },
+  ])
 
   function handleAddNote(note: Note) {
     setList([...list, note])
